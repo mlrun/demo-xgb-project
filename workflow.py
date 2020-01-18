@@ -1,9 +1,17 @@
 from kfp import dsl
+from mlrun import mount_v3io
 
 artifacts_path = './'
 funcs = {}
 
 df_path = 'mydf.csv'
+
+
+def init_functions(functions: dict, config=None):
+    for f in functions.values():
+        f.apply(mount_v3io())
+        print(f.to_yaml())
+
 
 @dsl.pipeline(
     name='My XGBoost training pipeline',

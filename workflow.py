@@ -1,4 +1,4 @@
-rom kfp import dsl
+from kfp import dsl
 
 artifacts_path = './'
 funcs = {}

@@ -2,6 +2,7 @@ kind: project
 name: iris
 functions:
   - url: function.yaml
+    name: xgb
   - url: "https://raw.githubusercontent.com/mlrun/functions/master/serving/xgboost/xgb_serving.ipynb"
     name: "serving"
 workflow: workflow.py

@@ -1,8 +1,10 @@
-from kfp import dsl
+rom kfp import dsl
 
 artifacts_path = './'
-func = None
+funcs = {}
 
+xgb = funcs['xgb']
+serving = funcs['serving']
 df_path = 'mydf.csv'
 
 @dsl.pipeline(
@@ -12,17 +14,18 @@ df_path = 'mydf.csv'
 def kfpipeline(
         eta=[0.1, 0.2, 0.3], gamma=[0.1, 0.2, 0.3]
 ):
-    builder = func.deploy_step(with_mlrun=False)
+    builder = xgb.deploy_step(with_mlrun=False)
 
-    ingest = func.as_step(name='ingest_iris', handler='iris_generator',
+    ingest = xgb.as_step(name='ingest_iris', handler='iris_generator',
                            image=builder.outputs['image'],
                            params={'target': df_path},
                            outputs=['iris_dataset'], out_path=artifacts_path)
 
-    train = func.as_step(name='xgb_train', handler='xgb_train',
+    train = xgb.as_step(name='xgb_train', handler='xgb_train',
                           image=builder.outputs['image'],
                           hyperparams={'eta': eta, 'gamma': gamma},
                           selector='max.accuracy',
                           inputs={'dataset': ingest.outputs['iris_dataset']},
                           outputs=['model'], out_path=artifacts_path)
 
+    deploy = serving.deploy_step(models={'iris_v1': train.outputs['model']})

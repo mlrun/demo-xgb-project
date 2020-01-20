@@ -7,7 +7,7 @@ funcs = {}
 df_path = 'mydf.csv'
 
 
-def init_functions(functions: dict, config=None):
+def init_functions(functions: dict, params=None, secrets=None):
     for f in functions.values():
         f.apply(mount_v3io())
         print(f.to_yaml())

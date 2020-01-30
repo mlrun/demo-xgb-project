@@ -26,3 +26,7 @@ pipeline = proj.run(arguments={}, artifacts_path='v3io:///users/admin/mlrun/kfp/
 * [Function code](iris.py)
 * [Workflow code (init + dsl)](workflow.py)
 
+
+## Pipeline
+
+<br><p align="center"><img src="./pipeline.PNG" width="500"/></p><br>

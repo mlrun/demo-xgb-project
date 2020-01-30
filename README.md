@@ -7,6 +7,8 @@ Demo the work of MLRun with Github based projects and automated CI/CD
 in a client or notebook properly configured with MLRun and KubeFlow use the following lines:
 
 ```python
+from mlrun import load_project
+
 # load the project from GitHub
 url = 'git://github.com/mlrun/webhook-demo.git'
 proj = load_project('/tmp/myproj', url)

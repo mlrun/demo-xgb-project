@@ -16,7 +16,7 @@ def iris_generator(context, target=''):
     iris_dataset = pd.DataFrame(data=iris.data, columns=iris.feature_names)
     iris_labels = pd.DataFrame(data=iris.target, columns=['label'])
     iris_dataset = pd.concat([iris_dataset, iris_labels], axis=1)
-    context.logger.info('saving iris dataframe to {} '.format(target))
+    context.logger.info('saving iris dataframe to {}  '.format(target))
     context.log_artifact(TableArtifact('iris_dataset', df=iris_dataset, target_path=target))
     
 

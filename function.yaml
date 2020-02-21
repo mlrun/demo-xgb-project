@@ -5,9 +5,8 @@ spec:
   command: 'iris.py'
   args: []
   build:
-    base_image: python:3.6-jessie
+    base_image: mlrun/mlrun
     commands:
     - pip install sklearn
     - pip install xgboost
     - pip install matplotlib
-    - pip install git+https://github.com/mlrun/mlrun.git@project-features

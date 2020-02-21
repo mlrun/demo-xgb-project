@@ -10,4 +10,4 @@ spec:
     - pip install sklearn
     - pip install xgboost
     - pip install matplotlib
-    - pip install mlrun
+    - pip install git+https://github.com/mlrun/mlrun.git@project-features

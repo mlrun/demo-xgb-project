@@ -26,7 +26,7 @@ def kfpipeline(
     ingest = funcs['xgb'].as_step(name='ingest_iris', handler='iris_generator',
         image=builder.outputs['image'],
         params={'target': df_path},
-        outputs=['iris_dataset'], out_path=artifacts_path)
+        outputs=['iris_dataset'])
 
     # use xgb.xgb_train function to train on the data (from the generator step)
     train = funcs['xgb'].as_step(name='xgb_train', handler='xgb_train',
@@ -34,7 +34,7 @@ def kfpipeline(
         hyperparams={'eta': eta, 'gamma': gamma},
         selector='max.accuracy',
         inputs={'dataset': ingest.outputs['iris_dataset']},
-        outputs=['model'], out_path=artifacts_path)
+        outputs=['model'])
 
     # deploy the trained model using a nuclio real-time function
     deploy = funcs['serving'].deploy_step(models={'iris_v1': train.outputs['model']})

@@ -44,8 +44,8 @@ Pre-requisites:
 * [Project Notebook (load and run workflows)](load-project.ipynb)
 * [Project spec (functions, workflows, etc)](project.yaml)
 * [Local function spec (XGboost)](src/iris.yaml)
-* [Function Notebook](notebooks/iris.py)
-* [Function code](src/iris.py)
+* [Function Notebook (code, test, build, run)](notebooks/train-xgboost.ipynb)
+* [Function code (generated from notebook)](src/iris.py)
 * [Workflow code (init + dsl)](src/workflow.py)
 
 

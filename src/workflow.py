@@ -1,11 +1,7 @@
 from kfp import dsl
 from mlrun import mount_v3io
 
-artifacts_path = './'
 funcs = {}
-
-df_path = 'mydf.csv'
-
 
 def init_functions(functions: dict, params=None, secrets=None):
     for f in functions.values():
@@ -25,7 +21,6 @@ def kfpipeline(
     # use xgb.iris_generator function to generate data (container image from the builder)
     ingest = funcs['xgb'].as_step(name='ingest_iris', handler='iris_generator',
         image=builder.outputs['image'],
-        params={'target': df_path},
         outputs=['iris_dataset'])
 
     # use xgb.xgb_train function to train on the data (from the generator step)

@@ -1,32 +1,47 @@
-# MLRun Project and GitOps demo
+# MLRun ML Project and MLOps demo
 
-Demo the work of MLRun with Github based projects and automated CI/CD
+Demo the work of MLRun with Github based projects and automated CI/CD<br>
+Using the Iris dataset and XGBoost Classification with Hyper-Parameters search.
+
+<br><p align="center"><img src="./docs/trees.png" width="500"/></p><br>
+
+The following examples demonstrate complete machine learning pipelines which include data collection, data preparation, 
+model training and automated deployment. 
+
+The examples demonstrate how you can:
+ * Run pipelines on locally on a notebook.
+ * Run some or all tasks on an elastic Kubernetes cluster using serverless functions/jobs.
+ * Create automated ML workflows using [KubeFlow Pipelines](https://www.kubeflow.org/docs/pipelines/overview/pipelines-overview/).
+ * Maintain project lifecycle
+
+The demo applications are tested on the [Iguazio's Data Science PaaS](https://www.iguazio.com/), 
+and use Iguazio's shared data fabric (v3io), and can be modified to work with any shared file storage by replacing the 
+```apply(v3io_mount())``` calls with other KubeFlow volume modifiers (e.g. `apply(mlrun.platforms.mount_pvc())`) . 
+You can request a [free trial of Iguazio PaaS](https://www.iguazio.com/lp/14-day-free-trial-in-the-cloud/).
 
 ## Running the demo
 
-in a client or notebook properly configured with MLRun and KubeFlow use the following lines:
+Pre-requisites:
+* A Kubernetes cluster with pre-installed KubeFlow, Nuclio.
+* MLRun Service and UI installed, [see MLRun readme](https://github.com/mlrun/mlrun).
 
-```python
-from mlrun import load_project
+1. Clone this repo to your own Git.<br>
+2. in a client or notebook properly configured with MLRun and KubeFlow run:
 
-# load the project from GitHub
-url = 'git://github.com/mlrun/webhook-demo.git'
-proj = load_project('/tmp/myproj', url)
+`mlrun project my-proj/ -u git://github.com/<your-fork>/demo-xgb-project.git`
 
-print(proj.to_yaml())
-
-# run the project main pipeline (build, data prep, train, deploy model)
-pipeline = proj.run(arguments={}, artifacts_path='v3io:///users/admin/mlrun/kfp/{{workflow.uid}}/')
-```
+3. Open the [project notebook]() and follow the instructions.
 
 ## Files
 
+* [Project Notebook (load and run workflows)](load-project.ipynb)
 * [Project spec (functions, workflows, etc)](project.yaml)
-* [Local function spec (XGboost)](function.yaml)
-* [Function code](iris.py)
-* [Workflow code (init + dsl)](workflow.py)
+* [Local function spec (XGboost)](src/iris.yaml)
+* [Function Notebook](notebooks/iris.py)
+* [Function code](src/iris.py)
+* [Workflow code (init + dsl)](src/workflow.py)
 
 
 ## Pipeline
 
-<br><p align="center"><img src="./pipeline.PNG" width="500"/></p><br>
+<br><p align="center"><img src="./docs/pipeline.PNG" width="500"/></p><br>

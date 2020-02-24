@@ -9,7 +9,7 @@ The following examples demonstrate complete machine learning pipelines which inc
 model training and automated deployment. 
 
 The examples demonstrate how you can:
- * Run pipelines on locally on a notebook.
+ * Run pipelines locally on a notebook.
  * Run some or all tasks on an elastic Kubernetes cluster using serverless functions/jobs.
  * Create automated ML workflows using [KubeFlow Pipelines](https://www.kubeflow.org/docs/pipelines/overview/pipelines-overview/).
  * Maintain project lifecycle
@@ -30,7 +30,9 @@ Pre-requisites:
 
 `mlrun project my-proj/ -u git://github.com/<your-fork>/demo-xgb-project.git`
 
-3. Open the [project notebook]() and follow the instructions.
+3. Run the [local playground notebook](notebooks/train-xgboost.ipynb) to build, test, and run functions.
+
+4. Open the [project notebook]() and follow the instructions to run an automated ML Pipeline and source control.
 
 > Note: alternatively you can run the `main` pipeline from the CLI and specify artifacts path using:
 

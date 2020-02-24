@@ -32,6 +32,11 @@ Pre-requisites:
 
 3. Open the [project notebook]() and follow the instructions.
 
+> Note: alternatively you can run the `main` pipeline from the CLI and specify artifacts path using:
+
+`mlrun project my-proj/ -r main -p "v3io:///users/admin/kfp/{{workflow.uid}}/"`
+
+
 ## Files
 
 * [Project Notebook (load and run workflows)](load-project.ipynb)

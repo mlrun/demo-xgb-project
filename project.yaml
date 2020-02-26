@@ -5,4 +5,5 @@ functions:
 - url: https://raw.githubusercontent.com/mlrun/functions/master/serving/xgboost/xgb_serving.ipynb
   name: serving
 workflows:
-  main: src/workflow.py
+- name: main
+  code: src/workflow.py

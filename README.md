@@ -32,7 +32,7 @@ Pre-requisites:
 
 3. Run the [local playground notebook](notebooks/train-xgboost.ipynb) to build, test, and run functions.
 
-4. Open the [project notebook]() and follow the instructions to run an automated ML Pipeline and source control.
+4. Open the [project notebook](load-project.ipynb) and follow the instructions to run an automated ML Pipeline and source control.
 
 > Note: alternatively you can run the `main` pipeline from the CLI and specify artifacts path using:
 
@@ -43,7 +43,7 @@ Pre-requisites:
 
 * [Project Notebook (load and run workflows)](load-project.ipynb)
 * [Project spec (functions, workflows, etc)](project.yaml)
-* [Local function spec (XGboost)](src/iris.yaml)
+* [Local XGBoost function spec (generated from notebook)](src/iris.yaml)
 * [Function Notebook (code, test, build, run)](notebooks/train-xgboost.ipynb)
 * [Function code (generated from notebook)](src/iris.py)
 * [Workflow code (init + dsl)](src/workflow.py)

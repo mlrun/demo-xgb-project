@@ -2,7 +2,7 @@ name: iris
 functions:
 - url: ./src/iris.yaml
   name: xgb
-- url: https://raw.githubusercontent.com/mlrun/functions/master/serving/xgboost/xgb_serving.ipynb
+- url: https://raw.githubusercontent.com/mlrun/mlrun/master/examples/xgb_serving.ipynb
   name: serving
 workflows:
 - name: main

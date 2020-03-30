@@ -6,4 +6,4 @@ functions:
   name: serving
 workflows:
 - name: main
-  code: src/workflow.py
+  path: src/workflow.py

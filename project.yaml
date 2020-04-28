@@ -1,10 +1,10 @@
 name: iris
 functions:
-- url: ./src/iris.yaml
+- url: /User/repos/demo-xgb-project/src/iris.yaml
   name: xgb
-- url: https://raw.githubusercontent.com/mlrun/mlrun/master/examples/xgb_serving.ipynb
+- url: /User/repos/functions/xgb_serving/xgb_serving.ipynb
   name: serving
 workflows:
 - name: main
-  path: ./src/workflow.py
+  path: /User/repos/demo-xgb-project/src/workflow.py
 artifacts: []

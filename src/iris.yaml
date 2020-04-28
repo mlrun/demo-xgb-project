@@ -2,18 +2,19 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: d2664f418144eeb02b0205d379ddfe8269de6829
+  hash: e214d0b7b48dfb9e868a5ee1562250d5378c0f31
   project: ''
+  categories: []
 spec:
-  command: src/iris.py
+  command: ./src/iris.py
   args: []
   env: []
+  default_handler: ''
   description: ''
   build:
     base_image: mlrun/mlrun
-    source: './'
     commands:
     - pip install sklearn
     - pip install xgboost
     - pip install matplotlib
-    code_origin: https://github.com/yaronha/demo-xgb-project.git#391138bbaffe829906950ea5329a3221f7052cf5:notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#32ab2068eed70f995ad13a94e3f2da6733715f48:notebooks/train-xgboost.ipynb

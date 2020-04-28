@@ -2,7 +2,7 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: 36272fae169ecaa6b23ef519a0569b998c728480
+  hash: 28cd6f8086226a2f8268c60bcb69145a22184ccd
   project: ''
   categories: []
 spec:
@@ -17,4 +17,4 @@ spec:
     - pip install sklearn
     - pip install xgboost
     - pip install matplotlib
-    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#c9d03705f49d36918ed16b2772635abe7e485cf9:/User/repos/demo-xgb-project/notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#033493f3606fa4932e027ec69898dfcd8c1f49bf:/User/repos/demo-xgb-project/notebooks/train-xgboost.ipynb

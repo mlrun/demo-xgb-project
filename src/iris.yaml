@@ -2,19 +2,16 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: 9327704f83bb3e3e48fa06e7dc0e82c9bfa89dd4
+  hash: a1acc2a094ef6530cac1895aab558d9cf8b668f3
   project: ''
   categories: []
 spec:
   command: /User/repos/demo-xgb-project/src/iris.py
   args: []
+  image: mlrun/ml-models:0.4.6-py37
   env: []
   default_handler: ''
   description: ''
   build:
-    base_image: mlrun/mlrun
-    commands:
-    - pip install sklearn
-    - pip install xgboost
-    - pip install matplotlib
-    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#421815d770b23c36385e429cf0a31e4507dcf5ae:/User/repos/demo-xgb-project/notebooks/train-xgboost.ipynb
+    commands: []
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#40e04f8346a6fb498a7dde1ccf94bb168f07719a:/User/repos/demo-xgb-project/notebooks/train-xgboost.ipynb

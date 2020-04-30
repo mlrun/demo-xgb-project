@@ -2,7 +2,7 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: 37ae900099b9a1bb5069608b09c32c1970340550
+  hash: 33e3092707a253532b923d9a216bf18ee9eae46d
   project: ''
   categories: []
 spec:
@@ -54,4 +54,4 @@ spec:
   description: ''
   build:
     commands: []
-    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#c54dde4d8c28f01cdf48feef2d9a4e58ffa98baa:notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#c025262df02c3258d61023ae34eda22cdaf56eb9:notebooks/train-xgboost.ipynb

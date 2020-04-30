@@ -6,5 +6,5 @@ functions:
   name: serving
 workflows:
 - name: main
-  path: /src/workflow.py
+  path: ./src/workflow.py
 artifacts: []

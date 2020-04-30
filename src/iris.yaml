@@ -2,16 +2,56 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: 9bf6a45e21c64a8b8b858eefe38c3e3cdfc701c7
+  hash: 37ae900099b9a1bb5069608b09c32c1970340550
   project: ''
   categories: []
 spec:
   command: src/iris.py
   args: []
-  image: mlrun/ml-models:0.4.6-py37
+  image: mlrun/ml-models
   env: []
   default_handler: ''
+  entry_points:
+    iris_generator:
+      name: iris_generator
+      doc: ''
+      parameters:
+      - name: context
+      outputs: []
+      lineno: 16
+    xgb_train:
+      name: xgb_train
+      doc: ''
+      parameters:
+      - name: context
+      - name: dataset
+      - name: model_name
+        default: model.bst
+      - name: max_depth
+        default: 6
+      - name: num_class
+        default: 10
+      - name: eta
+        default: 0.2
+      - name: gamma
+        default: 0.1
+      - name: steps
+        default: 20
+      outputs: []
+      lineno: 25
+    plot_iter:
+      name: plot_iter
+      doc: ''
+      parameters:
+      - name: context
+      - name: iterations
+      - name: col
+        default: accuracy
+      - name: num_bins
+        default: 10
+      outputs: []
+      lineno: 62
   description: ''
   build:
     commands: []
-    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#5e04a369124f386817766efa04e3ab7bf6248fef:notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#c54dde4d8c28f01cdf48feef2d9a4e58ffa98baa:notebooks/train-xgboost.ipynb

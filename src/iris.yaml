@@ -2,11 +2,11 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: e95235f130b951b43c7895eae96206387f2c642d
+  hash: 57a663e8fb2a5397277140739101702936c5fec0
   project: ''
   categories: []
 spec:
-  command: /User/repos/demo-xgb-project/src/iris.py
+  command: src/iris.py
   args: []
   image: mlrun/ml-models
   env: []
@@ -54,4 +54,4 @@ spec:
   description: ''
   build:
     commands: []
-    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#1a4f61921a9a0ffdcced2403153e3fcca66cc6bb:notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#2f030fdd20153ff2a2a61c854003cbb7bcd5b46a:notebooks/train-xgboost.ipynb

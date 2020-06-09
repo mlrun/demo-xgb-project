@@ -2,18 +2,59 @@ kind: job
 metadata:
   name: xgb
   tag: ''
-  hash: d2664f418144eeb02b0205d379ddfe8269de6829
+  hash: 288d3cce9a482cd474e1ca9195e1bb0589e56c89
   project: ''
 spec:
-  command: src/iris.py
+  command: ''
   args: []
   env: []
+  default_handler: ''
+  entry_points:
+    iris_generator:
+      name: iris_generator
+      doc: ''
+      parameters:
+      - name: context
+      outputs: []
+      lineno: 17
+    xgb_train:
+      name: xgb_train
+      doc: ''
+      parameters:
+      - name: context
+      - name: dataset
+      - name: model_name
+        default: model.bst
+      - name: max_depth
+        default: 6
+      - name: num_class
+        default: 4
+      - name: eta
+        default: 0.2
+      - name: gamma
+        default: 0.1
+      - name: steps
+        default: 20
+      outputs: []
+      lineno: 26
+    plot_iter:
+      name: plot_iter
+      doc: ''
+      parameters:
+      - name: context
+      - name: iterations
+      - name: col
+        default: accuracy
+      - name: num_bins
+        default: 10
+      outputs: []
+      lineno: 64
   description: ''
   build:
+    functionSourceCode: IyBHZW5lcmF0ZWQgYnkgbnVjbGlvLmV4cG9ydC5OdWNsaW9FeHBvcnRlcgoKaW1wb3J0IHdhcm5pbmdzCndhcm5pbmdzLnNpbXBsZWZpbHRlcihhY3Rpb249J2lnbm9yZScsIGNhdGVnb3J5PUZ1dHVyZVdhcm5pbmcpCgppbXBvcnQgeGdib29zdCBhcyB4Z2IKaW1wb3J0IG9zCmZyb20gc2tsZWFybi5kYXRhc2V0cyBpbXBvcnQgbG9hZF9pcmlzCmZyb20gc2tsZWFybi5tb2RlbF9zZWxlY3Rpb24gaW1wb3J0IHRyYWluX3Rlc3Rfc3BsaXQKaW1wb3J0IG51bXB5IGFzIG5wCmZyb20gc2tsZWFybi5tZXRyaWNzIGltcG9ydCBhY2N1cmFjeV9zY29yZQpmcm9tIG1scnVuLmFydGlmYWN0cyBpbXBvcnQgVGFibGVBcnRpZmFjdCwgUGxvdEFydGlmYWN0CmltcG9ydCBwYW5kYXMgYXMgcGQKZnJvbSBjbG91ZHBpY2tsZSBpbXBvcnQgZHVtcHMKCgpkZWYgaXJpc19nZW5lcmF0b3IoY29udGV4dCk6CiAgICBpcmlzID0gbG9hZF9pcmlzKCkKICAgIGlyaXNfZGF0YXNldCA9IHBkLkRhdGFGcmFtZShkYXRhPWlyaXMuZGF0YSwgY29sdW1ucz1pcmlzLmZlYXR1cmVfbmFtZXMpCiAgICBpcmlzX2xhYmVscyA9IHBkLkRhdGFGcmFtZShkYXRhPWlyaXMudGFyZ2V0LCBjb2x1bW5zPVsnbGFiZWwnXSkKICAgIGlyaXNfZGF0YXNldCA9IHBkLmNvbmNhdChbaXJpc19kYXRhc2V0LCBpcmlzX2xhYmVsc10sIGF4aXM9MSkKICAgIGNvbnRleHQubG9nZ2VyLmluZm8oJ3NhdmluZyBpcmlzIGRhdGFmcmFtZSB0byB7fScuZm9ybWF0KGNvbnRleHQub3V0X3BhdGgpKQogICAgY29udGV4dC5sb2dfYXJ0aWZhY3QoVGFibGVBcnRpZmFjdCgnaXJpc19kYXRhc2V0JywgZGY9aXJpc19kYXRhc2V0KSkKICAgIAoKZGVmIHhnYl90cmFpbihjb250ZXh0LCAKICAgICAgICAgICAgICBkYXRhc2V0PScnLAogICAgICAgICAgICAgIG1vZGVsX25hbWU9J21vZGVsLmJzdCcsCiAgICAgICAgICAgICAgbWF4X2RlcHRoPTYsCiAgICAgICAgICAgICAgbnVtX2NsYXNzPTQsCiAgICAgICAgICAgICAgZXRhPTAuMiwKICAgICAgICAgICAgICBnYW1tYT0wLjEsCiAgICAgICAgICAgICAgc3RlcHM9MjApOgoKICAgIGRmID0gcGQucmVhZF9jc3YoZGF0YXNldCkKICAgIFggPSBkZi5kcm9wKFsnbGFiZWwnXSwgYXhpcz0xKQogICAgeSA9IGRmWydsYWJlbCddCiAgICAKICAgIFhfdHJhaW4sIFhfdGVzdCwgWV90cmFpbiwgWV90ZXN0ID0gdHJhaW5fdGVzdF9zcGxpdChYLCB5LCB0ZXN0X3NpemU9MC4yKQogICAgZHRyYWluID0geGdiLkRNYXRyaXgoWF90cmFpbiwgbGFiZWw9WV90cmFpbikKICAgIGR0ZXN0ID0geGdiLkRNYXRyaXgoWF90ZXN0LCBsYWJlbD1ZX3Rlc3QpCgogICAgcGFyYW0gPSB7Im1heF9kZXB0aCI6IG1heF9kZXB0aCwKICAgICAgICAgICAgICJldGEiOiBldGEsICJudGhyZWFkIjogNCwKICAgICAgICAgICAgICJudW1fY2xhc3MiOiBudW1fY2xhc3MsCiAgICAgICAgICAgICAiZ2FtbWEiOiBnYW1tYSwKICAgICAgICAgICAgICJvYmplY3RpdmUiOiAibXVsdGk6c29mdG1heCJ9CgogICAgeGdiX21vZGVsID0geGdiLnRyYWluKHBhcmFtLCBkdHJhaW4sIHN0ZXBzKQoKICAgIHByZWRzID0geGdiX21vZGVsLnByZWRpY3QoZHRlc3QpCiAgICBiZXN0X3ByZWRzID0gbnAuYXNhcnJheShbbnAuYXJnbWF4KGxpbmUpIGZvciBsaW5lIGluIHByZWRzXSkKCiAgICBjb250ZXh0LmxvZ19yZXN1bHQoJ2FjY3VyYWN5JywgZmxvYXQoYWNjdXJhY3lfc2NvcmUoWV90ZXN0LCBiZXN0X3ByZWRzKSkpCiAgICAKICAgIGNvbnRleHQubG9nX2FydGlmYWN0KCdtb2RlbCcsIGJvZHk9ZHVtcHMoeGdiX21vZGVsKSwgCiAgICAgICAgICAgICAgICAgICAgICAgICBsb2NhbF9wYXRoPW1vZGVsX25hbWUsIGxhYmVscz17J2ZyYW1ld29yayc6ICd4Z2Jvb3N0J30pCiAgICAKICAgIAppbXBvcnQgbWF0cGxvdGxpYgppbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0CmZyb20gaW8gaW1wb3J0IEJ5dGVzSU8KCmRlZiBwbG90X2l0ZXIoY29udGV4dCwgaXRlcmF0aW9ucywgY29sPSdhY2N1cmFjeScsIG51bV9iaW5zPTEwKToKICAgIGRmID0gcGQucmVhZF9jc3YoQnl0ZXNJTyhpdGVyYXRpb25zLmdldCgpKSkKICAgIHggPSBkZlsnb3V0cHV0Lnt9Jy5mb3JtYXQoY29sKV0KICAgIGZpZywgYXggPSBwbHQuc3VicGxvdHMoZmlnc2l6ZT0oNiw2KSkKICAgIG4sIGJpbnMsIHBhdGNoZXMgPSBheC5oaXN0KHgsIG51bV9iaW5zLCBkZW5zaXR5PTEpCiAgICBheC5zZXRfeGxhYmVsKCdBY2N1cmFjY3knKQogICAgYXguc2V0X3lsYWJlbCgnQ291bnQnKQogICAgY29udGV4dC5sb2dfYXJ0aWZhY3QoUGxvdEFydGlmYWN0KCdteWZpZycsIGJvZHk9ZmlnKSkKCg==
     base_image: mlrun/mlrun
-    source: './'
     commands:
     - pip install sklearn
     - pip install xgboost
     - pip install matplotlib
-    code_origin: https://github.com/yaronha/demo-xgb-project.git#391138bbaffe829906950ea5329a3221f7052cf5:notebooks/train-xgboost.ipynb
+    code_origin: https://github.com/yjb-ds/demo-xgb-project.git#de3b9eb27a7d9d4bd1de0438332a7cc2569e1a47:notebooks/train-xgboost.ipynb

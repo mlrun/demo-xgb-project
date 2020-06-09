@@ -7,3 +7,4 @@ functions:
 workflows:
 - name: main
   path: src/workflow.py
+artifacts: []

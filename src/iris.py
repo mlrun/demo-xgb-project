@@ -27,7 +27,7 @@ def xgb_train(context,
               dataset='',
               model_name='model.bst',
               max_depth=6,
-              num_class=10,
+              num_class=4,
               eta=0.2,
               gamma=0.1,
               steps=20):
@@ -44,7 +44,7 @@ def xgb_train(context,
              "eta": eta, "nthread": 4,
              "num_class": num_class,
              "gamma": gamma,
-             "objective": "multi:softprob"}
+             "objective": "multi:softmax"}
 
     xgb_model = xgb.train(param, dtrain, steps)
 
